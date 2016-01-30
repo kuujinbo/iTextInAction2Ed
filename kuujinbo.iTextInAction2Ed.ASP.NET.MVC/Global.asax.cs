@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using iTextSharp.text.io;
 
 namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC
 {
@@ -13,6 +14,7 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            StreamUtil.AddToResourceSearch(HttpContext.Current.Server.MapPath("~/AsianFonts/iTextAsian.dll"));
         }
     }
 }
