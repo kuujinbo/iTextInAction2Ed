@@ -1,0 +1,779 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE86D574-30E9-41D9-9F22-4BE15DE42603}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>kuujinbo.iTextInAction2Ed.ASP.NET.MVC</RootNamespace>
+    <AssemblyName>kuujinbo.iTextInAction2Ed.ASP.NET.MVC</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <NuGetPackageImportStamp>8351015c</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip, Version=1.9.8.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.9.8\lib\net20\Ionic.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.8\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp.pdfa, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.pdfa.5.5.8\lib\itextsharp.pdfa.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.8\lib\itextsharp.xmlworker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp.xtra, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xtra.5.5.8\lib\itextsharp.xtra.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.SQLite, Version=1.0.99.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.99.0\lib\net45\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\filmfestival-schema.sql" />
+    <Content Include="App_Data\filmfestival.sql" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\octicons\octicons.css" />
+    <Content Include="Content\site.css" />
+    <Content Include="Content\styles\agate.css" />
+    <Content Include="Content\styles\androidstudio.css" />
+    <Content Include="Content\styles\arduino-light.css" />
+    <Content Include="Content\styles\arta.css" />
+    <Content Include="Content\styles\ascetic.css" />
+    <Content Include="Content\styles\atelier-cave-dark.css" />
+    <Content Include="Content\styles\atelier-cave-light.css" />
+    <Content Include="Content\styles\atelier-dune-dark.css" />
+    <Content Include="Content\styles\atelier-dune-light.css" />
+    <Content Include="Content\styles\atelier-estuary-dark.css" />
+    <Content Include="Content\styles\atelier-estuary-light.css" />
+    <Content Include="Content\styles\atelier-forest-dark.css" />
+    <Content Include="Content\styles\atelier-forest-light.css" />
+    <Content Include="Content\styles\atelier-heath-dark.css" />
+    <Content Include="Content\styles\atelier-heath-light.css" />
+    <Content Include="Content\styles\atelier-lakeside-dark.css" />
+    <Content Include="Content\styles\atelier-lakeside-light.css" />
+    <Content Include="Content\styles\atelier-plateau-dark.css" />
+    <Content Include="Content\styles\atelier-plateau-light.css" />
+    <Content Include="Content\styles\atelier-savanna-dark.css" />
+    <Content Include="Content\styles\atelier-savanna-light.css" />
+    <Content Include="Content\styles\atelier-seaside-dark.css" />
+    <Content Include="Content\styles\atelier-seaside-light.css" />
+    <Content Include="Content\styles\atelier-sulphurpool-dark.css" />
+    <Content Include="Content\styles\atelier-sulphurpool-light.css" />
+    <Content Include="Content\styles\brown-paper.css" />
+    <Content Include="Content\styles\brown-papersq.png" />
+    <Content Include="Content\styles\codepen-embed.css" />
+    <Content Include="Content\styles\color-brewer.css" />
+    <Content Include="Content\styles\dark.css" />
+    <Content Include="Content\styles\darkula.css" />
+    <Content Include="Content\styles\default.css" />
+    <Content Include="Content\styles\docco.css" />
+    <Content Include="Content\styles\far.css" />
+    <Content Include="Content\styles\foundation.css" />
+    <Content Include="Content\styles\github-gist.css" />
+    <Content Include="Content\styles\github.css" />
+    <Content Include="Content\styles\googlecode.css" />
+    <Content Include="Content\styles\grayscale.css" />
+    <Content Include="Content\styles\hopscotch.css" />
+    <Content Include="Content\styles\hybrid.css" />
+    <Content Include="Content\styles\idea.css" />
+    <Content Include="Content\styles\ir-black.css" />
+    <Content Include="Content\styles\kimbie.dark.css" />
+    <Content Include="Content\styles\kimbie.light.css" />
+    <Content Include="Content\styles\magula.css" />
+    <Content Include="Content\styles\mono-blue.css" />
+    <Content Include="Content\styles\monokai-sublime.css" />
+    <Content Include="Content\styles\monokai.css" />
+    <Content Include="Content\styles\obsidian.css" />
+    <Content Include="Content\styles\paraiso-dark.css" />
+    <Content Include="Content\styles\paraiso-light.css" />
+    <Content Include="Content\styles\pojoaque.css" />
+    <Content Include="Content\styles\pojoaque.jpg" />
+    <Content Include="Content\styles\railscasts.css" />
+    <Content Include="Content\styles\rainbow.css" />
+    <Content Include="Content\styles\school-book.css" />
+    <Content Include="Content\styles\school-book.png" />
+    <Content Include="Content\styles\solarized-dark.css" />
+    <Content Include="Content\styles\solarized-light.css" />
+    <Content Include="Content\styles\sunburst.css" />
+    <Content Include="Content\styles\tomorrow-night-blue.css" />
+    <Content Include="Content\styles\tomorrow-night-bright.css" />
+    <Content Include="Content\styles\tomorrow-night-eighties.css" />
+    <Content Include="Content\styles\tomorrow-night.css" />
+    <Content Include="Content\styles\tomorrow.css" />
+    <Content Include="Content\styles\vs.css" />
+    <Content Include="Content\styles\xcode.css" />
+    <Content Include="Content\styles\zenburn.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="App_Data\iTextInAction2Ed.db3" />
+    <Content Include="resources\db\filmfestival.script" />
+    <Content Include="resources\encryption\.keystore" />
+    <Content Include="resources\encryption\foobar.cer" />
+    <Content Include="resources\encryption\iTextTest.cer" />
+    <Content Include="resources\encryption\iTextTest.pfx" />
+    <Content Include="resources\encryption\keystore.p12" />
+    <Content Include="resources\encryption\ko.pfx" />
+    <Content Include="resources\fonts\abserif4_5.ttf" />
+    <Content Include="resources\fonts\cmr10.afm" />
+    <Content Include="resources\fonts\cmr10.pfb" />
+    <Content Include="resources\fonts\cmr10.pfm" />
+    <Content Include="resources\fonts\damase.ttf" />
+    <Content Include="resources\fonts\fsex2p00_public.ttf" />
+    <Content Include="resources\fonts\Puritan2.otf" />
+    <Content Include="resources\fonts\wds011402.ttf" />
+    <Content Include="resources\img\amb.jb2" />
+    <Content Include="resources\img\butterfly.wmf" />
+    <Content Include="resources\img\map.jp2" />
+    <Content Include="resources\img\sRGB.profile" />
+    <Content Include="resources\img\teapot.u3d" />
+    <Content Include="resources\pdf\broken_form.pdf" />
+    <Content Include="resources\pdf\datasheet.odt" />
+    <Content Include="resources\pdf\datasheet.pdf" />
+    <Content Include="resources\pdf\hero.pdf" />
+    <Content Include="resources\pdf\logo.pdf" />
+    <Content Include="resources\pdf\movie_overview.odt" />
+    <Content Include="resources\pdf\movie_overview.pdf" />
+    <Content Include="resources\pdf\preface.pdf" />
+    <Content Include="resources\pdf\xfa_enabled.pdf" />
+    <Content Include="resources\pdf\xfa_movie.pdf" />
+    <Content Include="resources\pdf\xfa_movies.pdf" />
+    <Content Include="resources\swf\FestivalCalendar1.mxml" />
+    <Content Include="resources\swf\FestivalCalendar2.mxml" />
+    <None Include="resources\xml\movies.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="resources\calendar\01.jpg" />
+    <Content Include="resources\calendar\02.jpg" />
+    <Content Include="resources\calendar\03.jpg" />
+    <Content Include="resources\calendar\04.jpg" />
+    <Content Include="resources\calendar\05.jpg" />
+    <Content Include="resources\calendar\06.jpg" />
+    <Content Include="resources\calendar\07.jpg" />
+    <Content Include="resources\calendar\08.jpg" />
+    <Content Include="resources\calendar\09.jpg" />
+    <Content Include="resources\calendar\10.jpg" />
+    <Content Include="resources\calendar\11.jpg" />
+    <Content Include="resources\calendar\12.jpg" />
+    <Content Include="resources\calendar\2010.txt" />
+    <Content Include="resources\calendar\2011.txt" />
+    <Content Include="resources\calendar\2012.txt" />
+    <Content Include="resources\calendar\content.txt" />
+    <Content Include="resources\fonts\copyright_notices.txt" />
+    <Content Include="resources\fonts\wds011402.txt" />
+    <Content Include="resources\img\1t3xt.gif" />
+    <Content Include="resources\img\animated_fox_dog.gif" />
+    <Content Include="resources\img\bruno.jpg" />
+    <Content Include="resources\img\bruno_ingeborg.jpg" />
+    <Content Include="resources\img\butterfly.bmp" />
+    <Content Include="resources\img\close.bmp" />
+    <Content Include="resources\img\close.png" />
+    <Content Include="resources\img\foxdog.mpg" />
+    <Content Include="resources\img\hitchcock.gif" />
+    <Content Include="resources\img\hitchcock.png" />
+    <Content Include="resources\img\iia2.jpg" />
+    <Content Include="resources\img\info.png" />
+    <Content Include="resources\img\kubrick.jpg" />
+    <Content Include="resources\img\kubrick_box.jpg" />
+    <Content Include="resources\img\loa.jpg" />
+    <Content Include="resources\img\logo.gif" />
+    <Content Include="resources\img\marbles.tif" />
+    <Content Include="resources\img\movie.gif" />
+    <Content Include="resources\js\buttons.js" />
+    <Content Include="resources\js\calculator.js" />
+    <Content Include="resources\js\extra.js" />
+    <Content Include="resources\js\find_director.js" />
+    <Content Include="resources\js\post_from_html.js" />
+    <Content Include="resources\js\post_to_html.js" />
+    <Content Include="resources\js\print_page.js" />
+    <Content Include="resources\js\show_date.js" />
+    <Content Include="resources\js\viewer_version.js" />
+    <Content Include="resources\posters\0033467.jpg" />
+    <Content Include="resources\posters\0042876.jpg" />
+    <Content Include="resources\posters\0044741.jpg" />
+    <Content Include="resources\posters\0047478.jpg" />
+    <Content Include="resources\posters\0048254.jpg" />
+    <Content Include="resources\posters\0049406.jpg" />
+    <Content Include="resources\posters\0050825.jpg" />
+    <Content Include="resources\posters\0051808.jpg" />
+    <Content Include="resources\posters\0054331.jpg" />
+    <Content Include="resources\posters\0055630.jpg" />
+    <Content Include="resources\posters\0056172.jpg" />
+    <Content Include="resources\posters\0056193.jpg" />
+    <Content Include="resources\posters\0056443.jpg" />
+    <Content Include="resources\posters\0057012.jpg" />
+    <Content Include="resources\posters\0062622.jpg" />
+    <Content Include="resources\posters\0066921.jpg" />
+    <Content Include="resources\posters\0072684.jpg" />
+    <Content Include="resources\posters\0081505.jpg" />
+    <Content Include="resources\posters\0088128.jpg" />
+    <Content Include="resources\posters\0088247.jpg" />
+    <Content Include="resources\posters\0088847.jpg" />
+    <Content Include="resources\posters\0090060.jpg" />
+    <Content Include="resources\posters\0090563.jpg" />
+    <Content Include="resources\posters\0090583.jpg" />
+    <Content Include="resources\posters\0091288.jpg" />
+    <Content Include="resources\posters\0091480.jpg" />
+    <Content Include="resources\posters\0091790.jpg" />
+    <Content Include="resources\posters\0092005.jpg" />
+    <Content Include="resources\posters\0093058.jpg" />
+    <Content Include="resources\posters\0093206.jpg" />
+    <Content Include="resources\posters\0094006.jpg" />
+    <Content Include="resources\posters\0094625.jpg" />
+    <Content Include="resources\posters\0095765.jpg" />
+    <Content Include="resources\posters\0095953.jpg" />
+    <Content Include="resources\posters\0096018.jpg" />
+    <Content Include="resources\posters\0097576.jpg" />
+    <Content Include="resources\posters\0098635.jpg" />
+    <Content Include="resources\posters\0099902.jpg" />
+    <Content Include="resources\posters\0100436.jpg" />
+    <Content Include="resources\posters\0100935.jpg" />
+    <Content Include="resources\posters\0101700.jpg" />
+    <Content Include="resources\posters\0102494.jpg" />
+    <Content Include="resources\posters\0103064.jpg" />
+    <Content Include="resources\posters\0104029.jpg" />
+    <Content Include="resources\posters\0105652.jpg" />
+    <Content Include="resources\posters\0107156.jpg" />
+    <Content Include="resources\posters\0108399.jpg" />
+    <Content Include="resources\posters\0111797.jpg" />
+    <Content Include="resources\posters\0113568.jpg" />
+    <Content Include="resources\posters\0113627.jpg" />
+    <Content Include="resources\posters\0119349.jpg" />
+    <Content Include="resources\posters\0120601.jpg" />
+    <Content Include="resources\posters\0120663.jpg" />
+    <Content Include="resources\posters\0120679.jpg" />
+    <Content Include="resources\posters\0120903.jpg" />
+    <Content Include="resources\posters\0137523.jpg" />
+    <Content Include="resources\posters\0145487.jpg" />
+    <Content Include="resources\posters\0154420.jpg" />
+    <Content Include="resources\posters\0164711.jpg" />
+    <Content Include="resources\posters\0169102.jpg" />
+    <Content Include="resources\posters\0180093.jpg" />
+    <Content Include="resources\posters\0181852.jpg" />
+    <Content Include="resources\posters\0190332.jpg" />
+    <Content Include="resources\posters\0201265.jpg" />
+    <Content Include="resources\posters\0203515.jpg" />
+    <Content Include="resources\posters\0210727.jpg" />
+    <Content Include="resources\posters\0211915.jpg" />
+    <Content Include="resources\posters\0235060.jpg" />
+    <Content Include="resources\posters\0245429.jpg" />
+    <Content Include="resources\posters\0245712.jpg" />
+    <Content Include="resources\posters\0246578.jpg" />
+    <Content Include="resources\posters\0247586.jpg" />
+    <Content Include="resources\posters\0255589.jpg" />
+    <Content Include="resources\posters\0256009.jpg" />
+    <Content Include="resources\posters\0259393.jpg" />
+    <Content Include="resources\posters\0266308.jpg" />
+    <Content Include="resources\posters\0268126.jpg" />
+    <Content Include="resources\posters\0269217.jpg" />
+    <Content Include="resources\posters\0270288.jpg" />
+    <Content Include="resources\posters\0278736.jpg" />
+    <Content Include="resources\posters\0279064.jpg" />
+    <Content Include="resources\posters\0283509.jpg" />
+    <Content Include="resources\posters\0290334.jpg" />
+    <Content Include="resources\posters\0299977.jpg" />
+    <Content Include="resources\posters\0301357.jpg" />
+    <Content Include="resources\posters\0311648.jpg" />
+    <Content Include="resources\posters\0316654.jpg" />
+    <Content Include="resources\posters\0320042.jpg" />
+    <Content Include="resources\posters\0323872.jpg" />
+    <Content Include="resources\posters\0338013.jpg" />
+    <Content Include="resources\posters\0339230.jpg" />
+    <Content Include="resources\posters\0344510.jpg" />
+    <Content Include="resources\posters\0347149.jpg" />
+    <Content Include="resources\posters\0348150.jpg" />
+    <Content Include="resources\posters\0362496.jpg" />
+    <Content Include="resources\posters\0368619.jpg" />
+    <Content Include="resources\posters\0372782.jpg" />
+    <Content Include="resources\posters\0372784.jpg" />
+    <Content Include="resources\posters\0374546.jpg" />
+    <Content Include="resources\posters\0376007.jpg" />
+    <Content Include="resources\posters\0376994.jpg" />
+    <Content Include="resources\posters\0378284.jpg" />
+    <Content Include="resources\posters\0385004.jpg" />
+    <Content Include="resources\posters\0388795.jpg" />
+    <Content Include="resources\posters\0402595.jpg" />
+    <Content Include="resources\posters\0413300.jpg" />
+    <Content Include="resources\posters\0418832.jpg" />
+    <Content Include="resources\posters\0419073.jpg" />
+    <Content Include="resources\posters\0423866.jpg" />
+    <Content Include="resources\posters\0445691.jpg" />
+    <Content Include="resources\posters\0449059.jpg" />
+    <Content Include="resources\posters\0452623.jpg" />
+    <Content Include="resources\posters\0457430.jpg" />
+    <Content Include="resources\posters\0468569.jpg" />
+    <Content Include="resources\posters\0473444.jpg" />
+    <Content Include="resources\posters\0482901.jpg" />
+    <Content Include="resources\posters\0809931.jpg" />
+    <Content Include="resources\posters\0813547.jpg" />
+    <Content Include="resources\posters\0857355.jpg" />
+    <Content Include="resources\posters\0948530.jpg" />
+    <Content Include="resources\scripts\filmfestival.sql" />
+    <Content Include="resources\scripts\filmfestival_hsqldb.sql" />
+    <Content Include="resources\scripts\filmfestival_mysql.sql" />
+    <Content Include="resources\swf\FestivalCalendar1.swf" />
+    <Content Include="resources\swf\FestivalCalendar2.swf" />
+    <Content Include="resources\txt\hero.txt" />
+    <Content Include="resources\txt\test.txt" />
+    <Content Include="resources\xml\foobarcity.svg" />
+    <Content Include="resources\xml\foobarrues.svg" />
+    <Content Include="resources\xml\foobarstraten.svg" />
+    <Content Include="resources\xml\foobarstreets.svg" />
+    <Content Include="resources\xml\moby.xml" />
+    <Content Include="resources\xml\peace.xml" />
+    <Content Include="resources\xml\say_peace.xml" />
+    <Content Include="resources\xml\xfa.xml" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\highlight.pack.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\PdfResult.cs" />
+    <Compile Include="Helpers\ZipResult.cs" />
+    <Compile Include="Models\Example.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Chapter02\CountryChunks.cs" />
+    <Compile Include="Services\Chapter02\DatabaseTest.cs" />
+    <Compile Include="Services\Chapter02\DirectorOverview1.cs" />
+    <Compile Include="Services\Chapter02\DirectorOverview2.cs" />
+    <Compile Include="Services\Chapter02\DirectorOverview3.cs" />
+    <Compile Include="Services\Chapter02\DirectorPhrases1.cs" />
+    <Compile Include="Services\Chapter02\DirectorPhrases2.cs" />
+    <Compile Include="Services\Chapter02\MovieChain.cs" />
+    <Compile Include="Services\Chapter02\MovieHistory.cs" />
+    <Compile Include="Services\Chapter02\MovieLinks1.cs" />
+    <Compile Include="Services\Chapter02\MovieLinks2.cs" />
+    <Compile Include="Services\Chapter02\MovieLists1.cs" />
+    <Compile Include="Services\Chapter02\MovieLists2.cs" />
+    <Compile Include="Services\Chapter02\MovieLists3.cs" />
+    <Compile Include="Services\Chapter02\MovieLists4.cs" />
+    <Compile Include="Services\Chapter02\MovieParagraphs1.cs" />
+    <Compile Include="Services\Chapter02\MovieParagraphs2.cs" />
+    <Compile Include="Services\Chapter02\MoviePosters1.cs" />
+    <Compile Include="Services\Chapter02\MoviePosters2.cs" />
+    <Compile Include="Services\Chapter02\MoviePosters3.cs" />
+    <Compile Include="Services\Chapter02\MovieTitles.cs" />
+    <Compile Include="Services\Chapter02\PipeSplitCharacter.cs" />
+    <Compile Include="Services\Chapter02\PositionedArrow.cs" />
+    <Compile Include="Services\Chapter02\RiverPhoenix.cs" />
+    <Compile Include="Services\Chapter02\StarSeparator.cs" />
+    <Compile Include="Services\Chapter03\ColumnMovies1.cs" />
+    <Compile Include="Services\Chapter03\ColumnMovies2.cs" />
+    <Compile Include="Services\Chapter03\FestivalOpening.cs" />
+    <Compile Include="Services\Chapter03\FoobarFilmFestival.cs" />
+    <Compile Include="Services\Chapter03\GraphicsStateStack.cs" />
+    <Compile Include="Services\Chapter03\ImageDirect.cs" />
+    <Compile Include="Services\Chapter03\ImageInline.cs" />
+    <Compile Include="Services\Chapter03\ImageSkew.cs" />
+    <Compile Include="Services\Chapter03\MovieCalendar.cs" />
+    <Compile Include="Services\Chapter03\MovieColumns1.cs" />
+    <Compile Include="Services\Chapter03\MovieColumns2.cs" />
+    <Compile Include="Services\Chapter03\MovieColumns3.cs" />
+    <Compile Include="Services\Chapter03\MovieColumns4.cs" />
+    <Compile Include="Services\Chapter03\MoviePosters.cs" />
+    <Compile Include="Services\Chapter03\MovieTemplates.cs" />
+    <Compile Include="Services\Chapter03\MovieTextInfo.cs" />
+    <Compile Include="Services\Chapter03\MovieTimeBlocks.cs" />
+    <Compile Include="Services\Chapter03\MovieTimeTable.cs" />
+    <Compile Include="Services\Chapter04\CellHeights.cs" />
+    <Compile Include="Services\Chapter04\ColumnTable.cs" />
+    <Compile Include="Services\Chapter04\ColumnWidths.cs" />
+    <Compile Include="Services\Chapter04\HeaderFooter1.cs" />
+    <Compile Include="Services\Chapter04\HeaderFooter2.cs" />
+    <Compile Include="Services\Chapter04\MemoryTests.cs" />
+    <Compile Include="Services\Chapter04\MovieCompositeMode.cs" />
+    <Compile Include="Services\Chapter04\MovieTextMode.cs" />
+    <Compile Include="Services\Chapter04\MyFirstTable.cs" />
+    <Compile Include="Services\Chapter04\NestedTable.cs" />
+    <Compile Include="Services\Chapter04\NestedTables.cs" />
+    <Compile Include="Services\Chapter04\PdfCalendar.cs" />
+    <Compile Include="Services\Chapter04\RotationAndColors.cs" />
+    <Compile Include="Services\Chapter04\Spacing.cs" />
+    <Compile Include="Services\Chapter04\TableAlignment.cs" />
+    <Compile Include="Services\Chapter04\TableHeight.cs" />
+    <Compile Include="Services\Chapter04\XMen.cs" />
+    <Compile Include="Services\Chapter04\Zhang.cs" />
+    <Compile Include="Services\Chapter05\AlternatingBackground.cs" />
+    <Compile Include="Services\Chapter05\Hero1.cs" />
+    <Compile Include="Services\Chapter05\Hero2.cs" />
+    <Compile Include="Services\Chapter05\Hero3.cs" />
+    <Compile Include="Services\Chapter05\MovieCountries1.cs" />
+    <Compile Include="Services\Chapter05\MovieCountries2.cs" />
+    <Compile Include="Services\Chapter05\MovieHistory1.cs" />
+    <Compile Include="Services\Chapter05\MovieHistory2.cs" />
+    <Compile Include="Services\Chapter05\MovieSlideShow.cs" />
+    <Compile Include="Services\Chapter05\MovieYears.cs" />
+    <Compile Include="Services\Chapter05\NewPage.cs" />
+    <Compile Include="Services\Chapter05\PdfCalendar.cs" />
+    <Compile Include="Services\Chapter05\PressPreviews.cs" />
+    <Compile Include="Services\Chapter05\RunLengthEvent.cs" />
+    <Compile Include="Services\Chapter06\Burst.cs" />
+    <Compile Include="Services\Chapter06\Concatenate.cs" />
+    <Compile Include="Services\Chapter06\ConcatenateForms1.cs" />
+    <Compile Include="Services\Chapter06\ConcatenateForms2.cs" />
+    <Compile Include="Services\Chapter06\ConcatenateStamp.cs" />
+    <Compile Include="Services\Chapter06\DataSheets1.cs" />
+    <Compile Include="Services\Chapter06\DataSheets2.cs" />
+    <Compile Include="Services\Chapter06\FillDataSheet.cs" />
+    <Compile Include="Services\Chapter06\FormInformation.cs" />
+    <Compile Include="Services\Chapter06\ImportingPages1.cs" />
+    <Compile Include="Services\Chapter06\ImportingPages2.cs" />
+    <Compile Include="Services\Chapter06\InsertPages.cs" />
+    <Compile Include="Services\Chapter06\Layers.cs" />
+    <Compile Include="Services\Chapter06\MemoryInfo.cs" />
+    <Compile Include="Services\Chapter06\NUpTool.cs" />
+    <Compile Include="Services\Chapter06\PageInformation.cs" />
+    <Compile Include="Services\Chapter06\SelectPages.cs" />
+    <Compile Include="Services\Chapter06\StampStationery.cs" />
+    <Compile Include="Services\Chapter06\StampText.cs" />
+    <Compile Include="Services\Chapter06\Stationery.cs" />
+    <Compile Include="Services\Chapter06\Superimposing.cs" />
+    <Compile Include="Services\Chapter06\TilingHero.cs" />
+    <Compile Include="Services\Chapter06\TwoPasses.cs" />
+    <Compile Include="Services\Chapter07\AddVersionChecker.cs" />
+    <Compile Include="Services\Chapter07\Advertisement.cs" />
+    <Compile Include="Services\Chapter07\BookmarkedTimeTable.cs" />
+    <Compile Include="Services\Chapter07\ButtonsActions.cs" />
+    <Compile Include="Services\Chapter07\Calculator.cs" />
+    <Compile Include="Services\Chapter07\ConcatenateBookmarks.cs" />
+    <Compile Include="Services\Chapter07\ConcatenateNamedDestinations.cs" />
+    <Compile Include="Services\Chapter07\CreateOutlineTree.cs" />
+    <Compile Include="Services\Chapter07\EventsAndActions.cs" />
+    <Compile Include="Services\Chapter07\FindDirectors.cs" />
+    <Compile Include="Services\Chapter07\GenericAnnotations.cs" />
+    <Compile Include="Services\Chapter07\LaunchAction.cs" />
+    <Compile Include="Services\Chapter07\LinkActions.cs" />
+    <Compile Include="Services\Chapter07\MovieAnnotations1.cs" />
+    <Compile Include="Services\Chapter07\MovieAnnotations2.cs" />
+    <Compile Include="Services\Chapter07\MovieAnnotations3.cs" />
+    <Compile Include="Services\Chapter07\MoviePosters1.cs" />
+    <Compile Include="Services\Chapter07\MoviePosters2.cs" />
+    <Compile Include="Services\Chapter07\NamedActions.cs" />
+    <Compile Include="Services\Chapter07\PrintTimeTable.cs" />
+    <Compile Include="Services\Chapter07\TimetableAnnotations1.cs" />
+    <Compile Include="Services\Chapter07\TimetableAnnotations2.cs" />
+    <Compile Include="Services\Chapter07\TimetableAnnotations3.cs" />
+    <Compile Include="Services\Chapter07\TimetableDestinations.cs" />
+    <Compile Include="Services\Chapter08\Buttons.cs" />
+    <Compile Include="Services\Chapter08\ChildFieldEvent.cs" />
+    <Compile Include="Services\Chapter08\ChoiceFields.cs" />
+    <Compile Include="Services\Chapter08\MovieAds.cs" />
+    <Compile Include="Services\Chapter08\RadioButtons.cs" />
+    <Compile Include="Services\Chapter08\ReaderEnabledForm.cs" />
+    <Compile Include="Services\Chapter08\ReplaceIcon.cs" />
+    <Compile Include="Services\Chapter08\Subscribe.cs" />
+    <Compile Include="Services\Chapter08\TextFieldActions.cs" />
+    <Compile Include="Services\Chapter08\TextFieldFonts.cs" />
+    <Compile Include="Services\Chapter08\TextFields.cs" />
+    <Compile Include="Services\Chapter08\XfaMovie.cs" />
+    <Compile Include="Services\Chapter08\XfaMovies.cs" />
+    <Compile Include="Services\Chapter09\CreateFDF.cs" />
+    <Compile Include="Services\Chapter09\FDFServlet.cs" />
+    <Compile Include="Services\Chapter09\FormServlet.cs" />
+    <Compile Include="Services\Chapter09\Hello.cs" />
+    <Compile Include="Services\Chapter09\HtmlMovies1.cs" />
+    <Compile Include="Services\Chapter09\HtmlMovies2.cs" />
+    <Compile Include="Services\Chapter09\JSForm.cs" />
+    <Compile Include="Services\Chapter09\MovieServlet.cs" />
+    <Compile Include="Services\Chapter09\PdfServlet.cs" />
+    <Compile Include="Services\Chapter09\ShowData.cs" />
+    <Compile Include="Services\Chapter09\SubmitForm.cs" />
+    <Compile Include="Services\Chapter09\XFDFServlet.cs" />
+    <Compile Include="Services\Chapter09\XmlHandler.cs" />
+    <Compile Include="Services\Chapter10\Barcodes.cs" />
+    <Compile Include="Services\Chapter10\ClippingPath.cs" />
+    <Compile Include="Services\Chapter10\CompressAwt.cs" />
+    <Compile Include="Services\Chapter10\CompressImage.cs" />
+    <Compile Include="Services\Chapter10\DeviceColor.cs" />
+    <Compile Include="Services\Chapter10\ImageMask.cs" />
+    <Compile Include="Services\Chapter10\ImageTypes.cs" />
+    <Compile Include="Services\Chapter10\PagedImages.cs" />
+    <Compile Include="Services\Chapter10\RawImage.cs" />
+    <Compile Include="Services\Chapter10\SeparationColor.cs" />
+    <Compile Include="Services\Chapter10\ShadingPatternColor.cs" />
+    <Compile Include="Services\Chapter10\TemplateClip.cs" />
+    <Compile Include="Services\Chapter10\TilingPatternColor.cs" />
+    <Compile Include="Services\Chapter10\Transparency1.cs" />
+    <Compile Include="Services\Chapter10\Transparency2.cs" />
+    <Compile Include="Services\Chapter10\TransparentAwt.cs" />
+    <Compile Include="Services\Chapter10\TransparentImage.cs" />
+    <Compile Include="Services\Chapter10\TransparentOverlay.cs" />
+    <Compile Include="Services\Chapter11\CJKExample.cs" />
+    <Compile Include="Services\Chapter11\Diacritics1.cs" />
+    <Compile Include="Services\Chapter11\Diacritics2.cs" />
+    <Compile Include="Services\Chapter11\EncodingExample.cs" />
+    <Compile Include="Services\Chapter11\EncodingNames.cs" />
+    <Compile Include="Services\Chapter11\ExtraCharSpace.cs" />
+    <Compile Include="Services\Chapter11\FontFactoryExample.cs" />
+    <Compile Include="Services\Chapter11\FontFileAndSizes.cs" />
+    <Compile Include="Services\Chapter11\FontSelectionExample.cs" />
+    <Compile Include="Services\Chapter11\FontTypes.cs" />
+    <Compile Include="Services\Chapter11\Ligatures1.cs" />
+    <Compile Include="Services\Chapter11\Ligatures2.cs" />
+    <Compile Include="Services\Chapter11\Monospace.cs" />
+    <Compile Include="Services\Chapter11\Peace.cs" />
+    <Compile Include="Services\Chapter11\RightToLeftExample.cs" />
+    <Compile Include="Services\Chapter11\SayPeace.cs" />
+    <Compile Include="Services\Chapter11\TTCExample.cs" />
+    <Compile Include="Services\Chapter11\Type3Example.cs" />
+    <Compile Include="Services\Chapter11\UnicodeExample.cs" />
+    <Compile Include="Services\Chapter11\VerticalTextExample1.cs" />
+    <Compile Include="Services\Chapter11\VerticalTextExample2.cs" />
+    <Compile Include="Services\Chapter12\EncryptionPdf.cs" />
+    <Compile Include="Services\Chapter12\HelloWorldCompression.cs" />
+    <Compile Include="Services\Chapter12\MetadataPdf.cs" />
+    <Compile Include="Services\Chapter12\MetadataXmp.cs" />
+    <Compile Include="Services\Chapter13\AddJavaScriptToForm.cs" />
+    <Compile Include="Services\Chapter13\AppendMode.cs" />
+    <Compile Include="Services\Chapter13\Bookmarks2NamedDestinations.cs" />
+    <Compile Include="Services\Chapter13\CropPages.cs" />
+    <Compile Include="Services\Chapter13\FixBrokenForm.cs" />
+    <Compile Include="Services\Chapter13\InspectForm.cs" />
+    <Compile Include="Services\Chapter13\PageLabelExample.cs" />
+    <Compile Include="Services\Chapter13\PageLayoutExample.cs" />
+    <Compile Include="Services\Chapter13\PdfXPdfA.cs" />
+    <Compile Include="Services\Chapter13\PrintPreferencesExample.cs" />
+    <Compile Include="Services\Chapter13\RemoveLaunchActions.cs" />
+    <Compile Include="Services\Chapter13\ReplaceURL.cs" />
+    <Compile Include="Services\Chapter13\RotatePages.cs" />
+    <Compile Include="Services\Chapter13\ViewerPreferencesExample.cs" />
+    <Compile Include="Services\Chapter14\DirectorCharts.cs" />
+    <Compile Include="Services\Chapter14\GetContentStream.cs" />
+    <Compile Include="Services\Chapter14\Graphics2DFonts.cs" />
+    <Compile Include="Services\Chapter14\GraphicsStateOperators.cs" />
+    <Compile Include="Services\Chapter14\PathConstructionAndPainting.cs" />
+    <Compile Include="Services\Chapter14\PearExample.cs" />
+    <Compile Include="Services\Chapter14\PearToPdf.cs" />
+    <Compile Include="Services\Chapter14\Text1ToPdf1.cs" />
+    <Compile Include="Services\Chapter14\Text1ToPdf2.cs" />
+    <Compile Include="Services\Chapter14\Text2ToPdf1.cs" />
+    <Compile Include="Services\Chapter14\Text2ToPdf2.cs" />
+    <Compile Include="Services\Chapter14\Text2ToPdf3.cs" />
+    <Compile Include="Services\Chapter14\Text3ToPdf.cs" />
+    <Compile Include="Services\Chapter14\Text4ToPdf.cs" />
+    <Compile Include="Services\Chapter14\TextExample1.cs" />
+    <Compile Include="Services\Chapter14\TextExample2.cs" />
+    <Compile Include="Services\Chapter14\TextExample3.cs" />
+    <Compile Include="Services\Chapter14\TextExample4.cs" />
+    <Compile Include="Services\Chapter14\TextMethods.cs" />
+    <Compile Include="Services\Chapter14\TextStateOperators.cs" />
+    <Compile Include="Services\Chapter14\TransformationMatrix1.cs" />
+    <Compile Include="Services\Chapter14\TransformationMatrix2.cs" />
+    <Compile Include="Services\Chapter14\TransformationMatrix3.cs" />
+    <Compile Include="Services\Chapter15\ContentParser.cs" />
+    <Compile Include="Services\Chapter15\ExtractImages.cs" />
+    <Compile Include="Services\Chapter15\ExtractPageContent.cs" />
+    <Compile Include="Services\Chapter15\ExtractPageContentArea.cs" />
+    <Compile Include="Services\Chapter15\ExtractPageContentSorted1.cs" />
+    <Compile Include="Services\Chapter15\ExtractPageContentSorted2.cs" />
+    <Compile Include="Services\Chapter15\InspectPageContent.cs" />
+    <Compile Include="Services\Chapter15\LayerMembershipExample1.cs" />
+    <Compile Include="Services\Chapter15\LayerMembershipExample2.cs" />
+    <Compile Include="Services\Chapter15\MyImageRenderListener.cs" />
+    <Compile Include="Services\Chapter15\MyTextRenderListener.cs" />
+    <Compile Include="Services\Chapter15\ObjectData.cs" />
+    <Compile Include="Services\Chapter15\OptionalContentActionExample.cs" />
+    <Compile Include="Services\Chapter15\OptionalContentExample.cs" />
+    <Compile Include="Services\Chapter15\ParseTaggedPdf.cs" />
+    <Compile Include="Services\Chapter15\ParsingHelloWorld.cs" />
+    <Compile Include="Services\Chapter15\PeekABoo.cs" />
+    <Compile Include="Services\Chapter15\ReadOutLoud.cs" />
+    <Compile Include="Services\Chapter15\ShowTextMargins.cs" />
+    <Compile Include="Services\Chapter15\StructuredContent.cs" />
+    <Compile Include="Services\Chapter15\StructureParser.cs" />
+    <Compile Include="Services\Chapter15\SvgLayers.cs" />
+    <Compile Include="Services\Chapter15\SvgToPdf.cs" />
+    <Compile Include="Services\Chapter16\EmbedFontPostFacto.cs" />
+    <Compile Include="Services\Chapter16\FestivalCalendar1.cs" />
+    <Compile Include="Services\Chapter16\FestivalCalendar2.cs" />
+    <Compile Include="Services\Chapter16\FileAttachmentEvent.cs" />
+    <Compile Include="Services\Chapter16\KubrickBox.cs" />
+    <Compile Include="Services\Chapter16\KubrickCollection.cs" />
+    <Compile Include="Services\Chapter16\KubrickDocumentary.cs" />
+    <Compile Include="Services\Chapter16\KubrickDvds.cs" />
+    <Compile Include="Services\Chapter16\KubrickMovies.cs" />
+    <Compile Include="Services\Chapter16\ListUsedFonts.cs" />
+    <Compile Include="Services\Chapter16\LocalDestinationEvent.cs" />
+    <Compile Include="Services\Chapter16\MovieAnnotation.cs" />
+    <Compile Include="Services\Chapter16\Pdf3D.cs" />
+    <Compile Include="Services\Chapter16\PdfActionEvent.cs" />
+    <Compile Include="Services\Chapter16\ResizeImage.cs" />
+    <Compile Include="Services\Chapter16\SpecialId.cs" />
+    <Compile Include="Services\KuujinboWeb\Chapter.cs" />
+    <Compile Include="Services\Chapter01\HelloWorld.cs" />
+    <Compile Include="Services\Chapter01\HelloWorldColumn.cs" />
+    <Compile Include="Services\Chapter01\HelloWorldDirect.cs" />
+    <Compile Include="Services\Chapter01\HelloWorldLandscape1.cs" />
+    <Compile Include="Services\Chapter01\HelloWorldLandscape2.cs" />
+    <Compile Include="Services\Chapter01\HelloWorldLetter.cs" />
+    <Compile Include="Services\Chapter01\HelloWorldMaximum.cs" />
+    <Compile Include="Services\Chapter01\HelloWorldMemory.cs" />
+    <Compile Include="Services\Chapter01\HelloWorldMirroredMargins.cs" />
+    <Compile Include="Services\Chapter01\HelloWorldMirroredMarginsTop.cs" />
+    <Compile Include="Services\Chapter01\HelloWorldNarrow.cs" />
+    <Compile Include="Services\Chapter01\HelloWorldVersion_1_7.cs" />
+    <Compile Include="Services\Chapter01\HelloZip.cs" />
+    <Compile Include="Services\Intro_1_2\AdoDB.cs" />
+    <Compile Include="Services\Intro_1_2\Category.cs" />
+    <Compile Include="Services\Intro_1_2\Country.cs" />
+    <Compile Include="Services\Intro_1_2\Director.cs" />
+    <Compile Include="Services\Intro_1_2\Entry.cs" />
+    <Compile Include="Services\Intro_1_2\FilmFonts.cs" />
+    <Compile Include="Services\Intro_1_2\Movie.cs" />
+    <Compile Include="Services\Intro_1_2\PojoFactory.cs" />
+    <Compile Include="Services\Intro_1_2\PojoToElementFactory.cs" />
+    <Compile Include="Services\Intro_1_2\Screening.cs" />
+    <Compile Include="Services\KuujinboWeb\IWriter.cs" />
+    <Compile Include="Services\KuujinboWeb\Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50085</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50085/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.99.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.99.0\build\net45\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.99.0\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.99.0\build\net45\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

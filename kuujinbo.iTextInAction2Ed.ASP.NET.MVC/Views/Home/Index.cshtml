@@ -1,0 +1,45 @@
+﻿@model string
+@{
+    ViewBag.Title = "Browse / Run Source Code";
+}
+
+<h1>Browse Source Code</h1>
+
+<div class='margin-tb10'>
+    @using (Html.BeginForm("Index", "Home"))
+    {
+        @Html.DropDownList("ChapterList")
+        <input class='btn btn-primary' type='submit' value='View Source' />
+    }
+</div>
+
+@if (Model != null) {
+    <pre><code class='csharp'>@Html.DisplayForModel(Model)</code></pre>
+}
+else
+{
+    <div class="jumbotron">
+        <h1>Running the Example Code</h1>
+        <div class='em-one-point-four'>
+            Select an example above to display:
+            <ul>
+                <li>The example source code.</li>
+                <li>A link at the bottom of the page to generate the output file(s).</li>
+            </ul>
+        </div>
+    </div>
+}
+
+@section fixedBottom
+{
+    @if (@ViewBag.HasResults != null && @ViewBag.ShowResultLink != null)
+    {
+        var param = (string[]) @ViewBag.ShowResultLink;
+        <div class="navbar navbar-inverse navbar-fixed-bottom center">
+            <a class="btn em-one-point-four btn-primary margin-tb10" 
+               href="@Url.Action("SendResults", "Home", new { chapter = param[0], example = param[1] })">
+                Run @string.Format("{0} {1}", param[0], param[1])
+            </a>
+        </div>
+    }
+}
