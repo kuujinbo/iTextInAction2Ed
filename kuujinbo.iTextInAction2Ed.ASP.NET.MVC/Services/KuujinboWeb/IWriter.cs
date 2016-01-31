@@ -5,14 +5,13 @@
  * common interface for all classes build the example result file(s)
 */
 using System.IO;
-using System.Web;
 
 namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services
 {
-  public interface IWriter 
-  {
-// ===========================================================================
-    void Write(Stream stream);
-// ===========================================================================    
-  }
+    public interface IWriter
+    {
+        // ===========================================================================
+        void Write(Stream stream);
+        // ===========================================================================    
+    }
 }

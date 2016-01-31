@@ -9,11 +9,13 @@
  * POJO for an object that corresponds with a record
  * in the table film_director.
  */
-namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Intro_1_2 {
-  public class Director {
-// =========================================================================== 
-    public string Name { get; set; }
-    public string GivenName { get; set; }
-// =========================================================================== 
-  }
+namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Intro_1_2
+{
+    public class Director
+    {
+        // =========================================================================== 
+        public string Name { get; set; }
+        public string GivenName { get; set; }
+        // =========================================================================== 
+    }
 }

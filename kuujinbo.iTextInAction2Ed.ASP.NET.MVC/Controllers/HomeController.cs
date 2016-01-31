@@ -60,7 +60,7 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Controllers
         }
 /*
     * ######################################################################
-    * actions
+    * setting up the view
     * ######################################################################
 */
         const string CHAPTER = "ChapterName";
@@ -90,8 +90,8 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Controllers
         private static readonly List<SelectListItem> _chapters;
         private static readonly List<object> _disabled = new List<object>();
 
-        // typical M$ - must jump through rings of fire just to do something
-        // as simple as creating <optgroup>
+        // init <optgroup>. typical M$ - jump through rings of fire to do 
+        // something as simple as creating <optgroup>
         static HomeController()
         {
             _chapters = new List<SelectListItem>();
@@ -124,6 +124,7 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Controllers
             }
         }
 
+        // set ViewBag for @Html.DropDownList
         private void GetExampleList()
         {
             ViewBag.ChapterList = new SelectList(
@@ -132,6 +133,7 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Controllers
             );
         }
 
+        // get example source code file
         private string GetSourceText(string param)
         {
             var chapterExample = GetParams(param);
@@ -144,6 +146,7 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Controllers
             );
         }
 
+        // sanity check chapter and example names
         private string[] GetParams(string dashString)
         {
             dashString = Regex.Replace(dashString, @"[^-\w]", "");

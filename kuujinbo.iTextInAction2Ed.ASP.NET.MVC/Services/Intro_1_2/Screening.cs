@@ -10,19 +10,21 @@ using System;
  * POJO for an object that corresponds with a record
  * in the table festival_screening.
  */
-namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Intro_1_2 {
-  public class Screening {
-// =========================================================================== 
-    /** The date of the screening. */
-    public string Date { get; set; }
-    /** The time of the screening. */
-    public string Time { get; set; }
-    /** The location of the screening. */
-    public String Location { get; set; }
-    /** Is this a screening for the press only? */
-    public bool Press { get; set; }
-    /** The movie that will be screened. */
-    public Movie movie { get; set; }
-// =========================================================================== 
-  }
+namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Intro_1_2
+{
+    public class Screening
+    {
+        // =========================================================================== 
+        /** The date of the screening. */
+        public string Date { get; set; }
+        /** The time of the screening. */
+        public string Time { get; set; }
+        /** The location of the screening. */
+        public String Location { get; set; }
+        /** Is this a screening for the press only? */
+        public bool Press { get; set; }
+        /** The movie that will be screened. */
+        public Movie movie { get; set; }
+        // =========================================================================== 
+    }
 }

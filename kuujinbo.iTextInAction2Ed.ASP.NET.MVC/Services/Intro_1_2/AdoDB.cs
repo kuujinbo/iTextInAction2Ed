@@ -22,19 +22,8 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Intro_1_2
         public static readonly DbProviderFactory Provider;
         static AdoDB()
         {
-            CS = WebConfigurationManager.ConnectionStrings["iTextEx"] != null
-                // web context        
-                ? WebConfigurationManager.ConnectionStrings["iTextEx"]
-                    .ConnectionString
-                /*
-                 * command-line, change to use SQL Server/other ADO.NET data provider
-                 */
-                : string.Format("Data Source={0};", new Uri(
-                    new Uri(Utility.BaseDirectory),
-                    "./app_data/iTextInAction2Ed.db3"
-                  ).LocalPath
-                );
-
+            CS = WebConfigurationManager.ConnectionStrings["iTextEx"]
+                 .ConnectionString;
             Provider = DbProviderFactories.GetFactory("System.Data.SQLite");
         }
         // ---------------------------------------------------------------------------

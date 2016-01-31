@@ -9,10 +9,12 @@
  * POJO for an object that corresponds with a record
  * in the table film_country.
  */
-namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Intro_1_2 {
-  public class Country {
-// =========================================================================== 
-    public string Name { get; set; }
-// =========================================================================== 
-  }
+namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Intro_1_2
+{
+    public class Country
+    {
+        // =========================================================================== 
+        public string Name { get; set; }
+        // =========================================================================== 
+    }
 }

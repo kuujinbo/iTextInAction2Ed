@@ -5,22 +5,23 @@
  * This example only works with the AGPL version of iText.
  */
 using iTextSharp.text;
-using iTextSharp.text.pdf;
 
 /**
  * Contains a series of static Font objects that are used throughout the book.
  */
-namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Intro_1_2 {
-  public class FilmFonts {
-// =========================================================================== 
-    /** A font used in our PDF file */
-    public static Font NORMAL = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
-    /** A font used in our PDF file */
-    public static Font BOLD = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD);
-    /** A font used in our PDF file */
-    public static Font ITALIC = new Font(Font.FontFamily.HELVETICA, 12, Font.ITALIC);
-    /** A font used in our PDF file */
-    public static Font BOLDITALIC = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLDITALIC);
-// =========================================================================== 
-  }
+namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Intro_1_2
+{
+    public class FilmFonts
+    {
+        // =========================================================================== 
+        /** A font used in our PDF file */
+        public static Font NORMAL = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
+        /** A font used in our PDF file */
+        public static Font BOLD = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD);
+        /** A font used in our PDF file */
+        public static Font ITALIC = new Font(Font.FontFamily.HELVETICA, 12, Font.ITALIC);
+        /** A font used in our PDF file */
+        public static Font BOLDITALIC = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLDITALIC);
+        // =========================================================================== 
+    }
 }

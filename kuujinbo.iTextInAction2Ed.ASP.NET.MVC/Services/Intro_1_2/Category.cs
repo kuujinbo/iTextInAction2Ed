@@ -9,17 +9,19 @@
  * POJO for an object that corresponds with a record
  * in the table festival_category.
  */
-namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Intro_1_2 {
-  public class Category {
-// =========================================================================== 
-    /** The name of the category. */
-    public string Name { get; set; }
-    /** A short keyword for the category. */
-    public string Keyword { get; set; }
-    /** The color code of the category. */
-    public string color { get; set; }
-    /** The parent category (if any). */
-    public Category Parent { get; set; }    
-// =========================================================================== 
-  }
-} 
+namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Intro_1_2
+{
+    public class Category
+    {
+        // =========================================================================== 
+        /** The name of the category. */
+        public string Name { get; set; }
+        /** A short keyword for the category. */
+        public string Keyword { get; set; }
+        /** The color code of the category. */
+        public string color { get; set; }
+        /** The parent category (if any). */
+        public Category Parent { get; set; }
+        // =========================================================================== 
+    }
+}
