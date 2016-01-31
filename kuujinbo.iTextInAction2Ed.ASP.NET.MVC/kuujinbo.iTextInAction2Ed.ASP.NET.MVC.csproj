@@ -200,7 +200,6 @@
     <Content Include="resources\encryption\iTextTest.cer" />
     <Content Include="resources\encryption\iTextTest.pfx" />
     <Content Include="resources\encryption\keystore.p12" />
-    <Content Include="resources\encryption\ko.pfx" />
     <Content Include="resources\fonts\abserif4_5.ttf" />
     <Content Include="resources\fonts\cmr10.afm" />
     <Content Include="resources\fonts\cmr10.pfb" />

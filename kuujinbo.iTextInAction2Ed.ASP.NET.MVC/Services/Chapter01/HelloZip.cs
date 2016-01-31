@@ -4,7 +4,6 @@
  * For more info, go to: http://itextpdf.com/examples/
  * This example only works with the AGPL version of iText.
  */
-using System;
 using System.IO;
 using Ionic.Zip;
 using iTextSharp.text;
@@ -21,33 +20,40 @@ using iTextSharp.text.pdf;
  * 
  * http://dotnetzip.codeplex.com/
 */
-namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter01 {
-  public class HelloZip : IWriter {
-// ===========================================================================
-/*
- * Creates a zip file with three PDF documents:
- * hello1.pdf to hello3.pdf
- */
-    public void Write(Stream stream) {
-      using (ZipFile zip = new ZipFile()) {
-        for (int i = 1; i <= 3; i++) {
-          using (MemoryStream ms = new MemoryStream()) {
-            // step 1
-            using (Document document = new Document()) {
-              // step 2
-              PdfWriter writer = PdfWriter.GetInstance(document, ms);
-              // step 3
-              document.Open();
-              // step 4
-              document.Add(new Paragraph(string.Format("Hello {0}", i)));
+namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter01
+{
+    public class HelloZip : IWriter
+    {
+        // ===========================================================================
+        /*
+         * Creates a zip file with three PDF documents:
+         * hello1.pdf to hello3.pdf
+         */
+        public void Write(Stream stream)
+        {
+            using (ZipFile zip = new ZipFile())
+            {
+                for (int i = 1; i <= 3; i++)
+                {
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        // step 1
+                        using (Document document = new Document())
+                        {
+                            // step 2
+                            PdfWriter writer = PdfWriter.GetInstance(document, ms);
+                            // step 3
+                            document.Open();
+                            // step 4
+                            document.Add(new Paragraph(string.Format("Hello {0}", i)));
+                        }
+                        string fileName = string.Format("hello_{0}.pdf", i);
+                        ZipEntry e = zip.AddEntry(fileName, ms.ToArray());
+                    }
+                }
+                zip.Save(stream);
             }
-            string fileName = string.Format("hello_{0}.pdf", i);
-            ZipEntry e = zip.AddEntry(fileName, ms.ToArray());
-          }
         }
-        zip.Save(stream);
-      }
+        // ===========================================================================
     }
-// ===========================================================================
-  }
 }
