@@ -12,15 +12,11 @@ using Ionic.Zip;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Intro_1_2;
-/*
- * only run on localhost; requires write permissions
- * to the specified directory on a real web server
-*/
+
 namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter06
 {
     public class FillDataSheet : IWriter
     {
-        // ===========================================================================
         /** The original PDF file. */
         public const string DATASHEET = "datasheet.pdf";
         /** Format for resulting PDF files. */
@@ -38,16 +34,19 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter06
                 foreach (Movie movie in movies)
                 {
                     if (movie.Year < 2007) continue;
-                    PdfReader reader = new PdfReader(datasheet);
+
                     string dest = string.Format(RESULT, movie.Imdb);
                     using (MemoryStream ms = new MemoryStream())
                     {
-                        using (PdfStamper stamper = new PdfStamper(reader, ms))
+                        using (var reader = new PdfReader(datasheet))
                         {
-                            Fill(stamper.AcroFields, movie);
-                            if (movie.Year == 2007) stamper.FormFlattening = true;
+                            using (PdfStamper stamper = new PdfStamper(reader, ms))
+                            {
+                                stamper.AcroFields.GenerateAppearances = true;
+                                Fill(stamper.AcroFields, movie);
+                                if (movie.Year == 2007) stamper.FormFlattening = true;
+                            }
                         }
-                        reader.Close();
                         zip.AddEntry(dest, ms.ToArray());
                     }
                 }
@@ -55,7 +54,7 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter06
                 zip.Save(stream);
             }
         }
-        // ---------------------------------------------------------------------------    
+
         /**
          * Fill out the fields using info from a Movie object.
          * @param form The form object
@@ -73,7 +72,7 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter06
                 form.SetField(screening.Location.Replace('.', '_'), "Yes");
             }
         }
-        // ---------------------------------------------------------------------------    
+
         /**
          * Gets the directors from a Movie object,
          * and concatenates them in a String.
@@ -96,6 +95,5 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter06
             if (i > 0) buf.Length = i - 2;
             return buf.ToString();
         }
-        // ===========================================================================
     }
 }

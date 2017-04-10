@@ -91,8 +91,8 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter07
                               string.Format(INFO, movie.Year, movie.Duration),
                               false, "Help"
                             );
-                            annotation.Color = WebColors.GetRGBColor(
-                              "#" + movie.entry.category.color
+                            annotation.Color = new BaseColor(
+                                System.Drawing.ColorTranslator.FromHtml("#" + movie.entry.category.color)
                             );
                             stamper.AddAnnotation(annotation, page);
                         }

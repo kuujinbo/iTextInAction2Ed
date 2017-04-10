@@ -14,33 +14,34 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter06
 {
     public class ConcatenateForms2 : IWriter
     {
-        // ===========================================================================
         public const string RESULT = "concatenated_forms2.pdf";
         /** The original PDF file. */
         public const string copyName = "datasheet.pdf";
         public readonly string DATASHEET = Path.Combine(
           Utility.ResourcePdf, copyName
         );
-        // ---------------------------------------------------------------------------    
+
         public void Write(Stream stream)
         {
             using (ZipFile zip = new ZipFile())
             {
                 using (MemoryStream ms = new MemoryStream())
                 {
-                    // Create a PdfCopyFields object
-                    PdfCopyFields copy = new PdfCopyFields(ms);
-                    // add a document
-                    PdfReader reader1 = new PdfReader(RenameFieldsIn(DATASHEET, 1));
-                    copy.AddDocument(reader1);
-                    // add a document
-                    PdfReader reader2 = new PdfReader(RenameFieldsIn(DATASHEET, 2));
-                    copy.AddDocument(reader2);
-                    // close the PdfCopyFields object
-                    copy.Close();
-                    reader1.Close();
-                    reader2.Close();
-                    zip.AddEntry(RESULT, ms.ToArray());
+                    using (var document = new Document())
+                    {
+                        PdfReader reader1 = new PdfReader(RenameFieldsIn(DATASHEET, 1));
+                        PdfReader reader2 = new PdfReader(RenameFieldsIn(DATASHEET, 2));
+                        using (var copy = new PdfCopy(document, ms))
+                        {
+                            copy.SetMergeFields();
+                            document.Open();
+                            copy.AddDocument(reader1);
+                            copy.AddDocument(reader2);
+                        }
+                        reader1.Close();
+                        reader2.Close();
+                        zip.AddEntry(RESULT, ms.ToArray());
+                    }
                 }
                 zip.AddFile(DATASHEET, "");
                 zip.Save(stream);
@@ -80,6 +81,5 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter06
                 return ms.ToArray();
             }
         }
-        // ===========================================================================
     }
 }

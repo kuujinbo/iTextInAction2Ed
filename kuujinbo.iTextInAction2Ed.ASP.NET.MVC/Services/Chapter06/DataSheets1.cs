@@ -15,25 +15,20 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter06
 {
     public class DataSheets1 : FillDataSheet
     {
-        // ===========================================================================
         public new const string RESULT = "datasheets1.pdf";
         public readonly string DATASHEET_PATH = Path.Combine(Utility.ResourcePdf, DATASHEET);
-        // ---------------------------------------------------------------------------
+
         public override void Write(Stream stream)
         {
             using (ZipFile zip = new ZipFile())
             {
                 using (MemoryStream ms = new MemoryStream())
                 {
-                    // step 1
                     using (Document document = new Document())
                     {
-                        // step 2
                         using (PdfCopy copy = new PdfCopy(document, ms))
                         {
-                            // step 3
                             document.Open();
-                            // step 4
                             AddDataSheets(copy);
                         }
                     }
@@ -43,7 +38,7 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter06
                 zip.Save(stream);
             }
         }
-        // ---------------------------------------------------------------------------
+
         /**
          * Fills out a data sheet, flattens it, and adds it to a combined PDF.
          * @param copy the PdfCopy instance (can also be PdfSmartCopy)
@@ -59,6 +54,7 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter06
                 {
                     using (PdfStamper stamper = new PdfStamper(reader, ms))
                     {
+                        stamper.AcroFields.GenerateAppearances = true;
                         Fill(stamper.AcroFields, movie);
                         stamper.FormFlattening = true;
                     }
@@ -70,6 +66,5 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter06
                 reader.Close();
             }
         }
-        // ===========================================================================
     }
 }

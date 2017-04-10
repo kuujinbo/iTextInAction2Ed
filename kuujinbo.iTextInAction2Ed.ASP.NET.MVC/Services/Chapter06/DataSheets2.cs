@@ -8,31 +8,24 @@ using System.IO;
 using Ionic.Zip;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-/*
- * this creates a bit of overhead, so we only run on localhost;
-*/
+
 namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter06
 {
     public class DataSheets2 : DataSheets1
     {
-        // ===========================================================================
         public new const string RESULT = "datasheets2.pdf";
-        // ---------------------------------------------------------------------------
+
         public override void Write(Stream stream)
         {
             using (ZipFile zip = new ZipFile())
             {
                 using (MemoryStream ms = new MemoryStream())
                 {
-                    // step 1
                     using (Document document = new Document())
                     {
-                        // step 2
                         using (PdfSmartCopy copy = new PdfSmartCopy(document, ms))
                         {
-                            // step 3
                             document.Open();
-                            // step 4
                             AddDataSheets(copy);
                         }
                     }
@@ -42,6 +35,5 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter06
                 zip.Save(stream);
             }
         }
-        // ===========================================================================
     }
 }

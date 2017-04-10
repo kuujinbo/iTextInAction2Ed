@@ -86,8 +86,8 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter04
             cell.AddElement(FullTitle(screening));
             cell.Colspan = 4;
             cell.Border = PdfPCell.NO_BORDER;
-            BaseColor color = WebColors.GetRGBColor(
-              "#" + movie.entry.category.color
+            BaseColor color = new BaseColor(
+                System.Drawing.ColorTranslator.FromHtml("#" + movie.entry.category.color)
             );
             cell.BackgroundColor = color;
             table.AddCell(cell);

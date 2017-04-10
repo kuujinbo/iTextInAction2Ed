@@ -9,7 +9,6 @@ using System.IO;
 using System.Collections.Generic;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using iTextSharp.text.html;
 using kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Intro_1_2;
 
 namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter03
@@ -61,8 +60,8 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter03
         )
         {
             under.SaveState();
-            BaseColor color = WebColors.GetRGBColor(
-              "#" + screening.movie.entry.category.color
+            BaseColor color = new BaseColor(
+                System.Drawing.ColorTranslator.FromHtml("#" + screening.movie.entry.category.color)
             );
             under.SetColorFill(color);
             Rectangle rect = GetPosition(screening);
@@ -103,6 +102,5 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter03
             ury = lly + HEIGHT_LOCATION;
             return new Rectangle(llx, lly, urx, ury);
         }
-        // ===========================================================================
     }
 }
