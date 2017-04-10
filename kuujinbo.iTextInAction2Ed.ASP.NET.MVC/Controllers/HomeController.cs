@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
@@ -10,11 +9,6 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Controllers
 {
     public class HomeController : Controller
     {
-/*
-    * ######################################################################
-    * actions
-    * ######################################################################
-*/
         public ActionResult Index()
         {
             GetExampleList();
@@ -152,7 +146,5 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Controllers
             dashString = Regex.Replace(dashString, @"[^-\w]", "");
             return dashString.Split(new char[] {'-'}, 2);
         }
-
-
     }
 }

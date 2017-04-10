@@ -1,6 +1,5 @@
 ﻿/*
  * This class is __NOT__ part of the book "iText in Action - 2nd Edition".
- * it's a helper class to build the examples on your local machine.
  */
 using System;
 using System.Collections.Generic;
@@ -20,7 +19,7 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services
             not_implemented
         }
  
-        // used to instantiate chapters via reflection
+        // instantiate chapters via reflection
         public string ChapterName { get; set; }
         public string ExampleName { get; set; }
 
@@ -85,10 +84,9 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services
             }
         }
 
-        // create / send output result; either zip or PDF.
         public void SendOutput()
         {
-            // create the example class objects using reflection    
+            // create example class objects w/reflection    
             string typeString = string.Format("{0}.{1}.{2}",
                 this.GetType().Namespace, ChapterName, ExampleName
             );
@@ -97,26 +95,17 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services
             );
 
             HttpContext hc = HttpContext.Current;
-            if (hc != null)
+            if (IsZipResult)
             {
-                if (IsZipResult)
-                {
-                    //Utility.SendZipHeaders(
-                    //    hc.Response, string.Format("{0}.{1}.zip", ChapterName, ExampleName)
-                    //);
-                    iw.Write(hc.Response.OutputStream);
-                }
-                else if (IsPdfResult)
-                {
-                    //Utility.SendPdfHeaders(
-                    //    hc.Response, string.Format("{0}.{1}.pdf", ChapterName, ExampleName)
-                    //);
-                    iw.Write(hc.Response.OutputStream);
-                }
-                else if (IsOtherResult)
-                {
-                    iw.Write(hc.Response.OutputStream);
-                }
+                iw.Write(hc.Response.OutputStream);
+            }
+            else if (IsPdfResult)
+            {
+                iw.Write(hc.Response.OutputStream);
+            }
+            else if (IsOtherResult)
+            {
+                iw.Write(hc.Response.OutputStream);
             }
         }
 
@@ -220,7 +209,6 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services
                     {"ColumnWidths", OutputType.pdf},
                     {"HeaderFooter1", OutputType.pdf},
                     {"HeaderFooter2", OutputType.pdf},
-    // change if implemented later          
                     {"MemoryTests", OutputType.not_implemented},
                     {"MovieCompositeMode", OutputType.pdf},
                     {"MovieTextMode", OutputType.pdf},
@@ -269,7 +257,6 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services
                     {"ImportingPages2", OutputType.zip},
                     {"InsertPages", OutputType.zip},
                     {"Layers", OutputType.zip},
-    // change if implemented later                    
                     {"MemoryInfo", OutputType.not_implemented},
                     {"NUpTool", OutputType.zip},
                     {"PageInformation", OutputType.zip},
@@ -498,6 +485,5 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services
                 }
             }    
         };
-// ===========================================================================
     }
 }

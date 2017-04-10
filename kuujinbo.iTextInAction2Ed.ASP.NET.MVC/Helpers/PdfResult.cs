@@ -11,8 +11,6 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Helpers
             this.FileDownloadName = fileDownloadName;
         }
 
-        protected override void WriteFile(HttpResponseBase response)
-        {
-        }
+        protected override void WriteFile(HttpResponseBase response) { }
     }
 }
