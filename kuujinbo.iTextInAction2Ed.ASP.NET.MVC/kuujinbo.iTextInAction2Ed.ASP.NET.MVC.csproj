@@ -136,6 +136,7 @@
     <Content Include="resources\img\map.jp2" />
     <Content Include="resources\img\sRGB.profile" />
     <Content Include="resources\img\teapot.u3d" />
+    <Content Include="resources\xml\itext-hyph-xml.dll" />
     <Content Include="resources\pdf\broken_form.pdf" />
     <Content Include="resources\pdf\datasheet.odt" />
     <Content Include="resources\pdf\datasheet.pdf" />

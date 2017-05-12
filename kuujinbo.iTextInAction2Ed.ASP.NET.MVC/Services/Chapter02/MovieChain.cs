@@ -8,6 +8,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Text;
 using iTextSharp.text;
+using iTextSharp.text.io;
 using iTextSharp.text.pdf;
 using kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Intro_1_2;
 
@@ -43,7 +44,7 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter02
                 // wrap the chunk in a paragraph and add it to the document
                 Paragraph paragraph = new Paragraph("A:\u00a0");
                 paragraph.Add(chunk1);
-                paragraph.Alignment = Element.ALIGN_JUSTIFIED;
+                //paragraph.Alignment = Element.ALIGN_JUSTIFIED;
                 document.Add(paragraph);
                 document.Add(Chunk.NEWLINE);
                 // define the pipe character as split character
@@ -51,7 +52,7 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter02
                 // wrap the chunk in a second paragraph and add it
                 paragraph = new Paragraph("B:\u00a0");
                 paragraph.Add(chunk1);
-                paragraph.Alignment = Element.ALIGN_JUSTIFIED;
+                //paragraph.Alignment = Element.ALIGN_JUSTIFIED;
                 document.Add(paragraph);
                 document.Add(Chunk.NEWLINE);
 
@@ -67,15 +68,19 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter02
                 // wrap the chunk in a paragraph and add it to the document
                 paragraph = new Paragraph("C:\u00a0");
                 paragraph.Add(chunk2);
-                paragraph.Alignment = Element.ALIGN_JUSTIFIED;
+                // paragraph.Alignment = Element.ALIGN_JUSTIFIED;
                 document.Add(paragraph);
                 document.NewPage();
+
+                // load hyphen xml resources
+                StreamUtil.AddToResourceSearch(Path.Combine(Utility.ResourceXml, "itext-hyph-xml.dll"));
+
                 // define hyphenation for the chunk
                 chunk2.SetHyphenation(new HyphenationAuto("en", "US", 2, 2));
                 // wrap the second chunk in a second paragraph and add it
                 paragraph = new Paragraph("D:\u00a0");
                 paragraph.Add(chunk2);
-                paragraph.Alignment = Element.ALIGN_JUSTIFIED;
+                // paragraph.Alignment = Element.ALIGN_JUSTIFIED;
                 document.Add(paragraph);
 
                 // go to a new page
@@ -85,7 +90,7 @@ namespace kuujinbo.iTextInAction2Ed.ASP.NET.MVC.Services.Chapter02
                 // wrap the second chunk in a third paragraph and add it
                 paragraph = new Paragraph("E:\u00a0");
                 paragraph.Add(chunk2);
-                paragraph.Alignment = Element.ALIGN_JUSTIFIED;
+                // paragraph.Alignment = Element.ALIGN_JUSTIFIED;
                 document.Add(paragraph);
             }
         }
